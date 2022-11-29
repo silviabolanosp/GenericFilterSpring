@@ -1,0 +1,20 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  jpa:
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://prod-latam-postgres.postgres.database.azure.com:5432/prod_recruiting_platform
+    username: prod_recruiting_platform_db_user@prod-latam-postgres
+    password: Vj?mo#.s77:4oDYVM2
+    driverClassName: org.postgresql.Driver
+
+server:
+  port: 80

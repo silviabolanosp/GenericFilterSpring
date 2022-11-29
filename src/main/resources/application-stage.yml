@@ -1,0 +1,20 @@
+spring:
+  config:
+    activate:
+      on-profile: stage
+
+  jpa:
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://prod-latam-postgres.postgres.database.azure.com:5432/stage_recruiting_platform
+    username: stage_recruiting_platform_db_user@prod-latam-postgres
+    password: HmP85.6_9u:j{rRxVV
+    driverClassName: org.postgresql.Driver
+
+server:
+  port: 80

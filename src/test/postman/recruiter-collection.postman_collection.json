@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "49d4366c-c5ea-41f3-a89a-06dd52d10134",
+		"name": "recruiter-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19460761"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response should be okay to process\", function () {\r",
+									"    pm.response.to.not.be.error;\r",
+									"    pm.response.to.not.have.jsonBody(\"error\");\r",
+									"    pm.response.to.have.jsonBody().status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{actuator}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{actuator}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"item": [
+				{
+					"name": "swaggerDocs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"response should be okay to process\", function () {\r",
+									"    pm.response.to.not.be.error;\r",
+									"    pm.response.to.not.have.jsonBody(\"error\");\r",
+									"    pm.response.to.have.jsonBody().status(\"OK\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{swaggerDocs}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{swaggerDocs}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swaggerUI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{swaggerUI}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{swaggerUI}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API v1",
+			"item": [
+				{
+					"name": "jobs-application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\r",
+									"    \"Status test\",\r",
+									"    function () {\r",
+									"        pm.response.to.have.status(201);\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response must be valid and have a body\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.be.withBody\r",
+									"        pm.response.to.be.json\r",
+									"        pm.expect(responseJson.message).to.eql('New lead created')\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response should be okay to process\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.not.be.error\r",
+									"        pm.response.to.not.have.jsonBody(\"error\")\r",
+									"        pm.expect(responseJson).to.have.property('message')\r",
+									"    }\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\":\"Testfirstname_DONT-USE\",\n    \"lastName\":\"Testlastname_DONT-USE\",\n    \"email\":\"cr.careers.by.pdg@yopmail.com\",\n    \"phoneNumber\":\"50683288274\",\n    \"country\":\"Costa Rica\",\n    \"jobId\":\"743999812777904-senior-creative-engineer---e-mail\",\n    \"srUuid\":\"905f658c-bef0-4597-b1ff-b5e69c962edb\",\n    \"linkedinUrl\":\"linedInd/test_DONT-USE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{version-1}}/{{jobs-application}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version-1}}",
+								"{{jobs-application}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jobs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\r",
+									"    \"Status test\",\r",
+									"    function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response must be valid and have a body\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.be.withBody\r",
+									"        pm.response.to.be.json\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response should be okay to process\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.not.be.error\r",
+									"        pm.response.to.not.have.jsonBody(\"error\")\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Result collection is not empty\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.expect(responseJson).to.not.be.empty\r",
+									"    }\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{version-1}}/{{jobs}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version-1}}",
+								"{{jobs}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\r",
+									"    \"Status test\",\r",
+									"    function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response must be valid and have a body\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.be.withBody\r",
+									"        pm.response.to.be.json\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response should be okay to process\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.not.be.error\r",
+									"        pm.response.to.not.have.jsonBody(\"error\")\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Result collection is not empty\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.expect(responseJson).to.not.be.empty\r",
+									"    }\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{version-1}}/{{categories}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version-1}}",
+								"{{categories}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\r",
+									"    \"Status test\",\r",
+									"    function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response must be valid and have a body\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.be.withBody\r",
+									"        pm.response.to.be.json\r",
+									"    }\r",
+									")\r",
+									"pm.test(\r",
+									"    \"Response should be okay to process\",\r",
+									"    function() {\r",
+									"        const responseJson = pm.response.json()\r",
+									"        pm.response.to.not.be.error\r",
+									"        pm.response.to.not.have.jsonBody(\"error\")\r",
+									"        pm.expect(responseJson).to.have.property('results')\r",
+									"    }\r",
+									")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{version-1}}/{{countries}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{version-1}}",
+								"{{countries}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "swaggerDocs",
+			"value": "v3/api-docs",
+			"type": "string"
+		},
+		{
+			"key": "swaggerUI",
+			"value": "swagger-ui/index.html",
+			"type": "string"
+		},
+		{
+			"key": "jobs-application",
+			"value": "jobs-application",
+			"type": "string"
+		},
+		{
+			"key": "jobs",
+			"value": "jobs",
+			"type": "string"
+		},
+		{
+			"key": "categories",
+			"value": "categories",
+			"type": "string"
+		},
+		{
+			"key": "countries",
+			"value": "countries",
+			"type": "string"
+		},
+		{
+			"key": "version-1",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"key": "actuator",
+			"value": "actuator/health/ping",
+			"type": "string"
+		}
+	]
+}

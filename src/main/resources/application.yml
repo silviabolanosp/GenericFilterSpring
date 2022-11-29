@@ -1,0 +1,59 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: 'update'
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/recruiting_db
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+
+app:
+  smartrecruiters:
+    base-url: "https://api.smartrecruiters.com/v1/companies/PublicisGroupe"
+    job-post-apply-url: "https://api.smartrecruiters.com/postings"
+    smart-token: "DCRA1-646b1e67d0654a63912249277a0b6eed"
+    limit: 100
+    country: "cr,co,ar,mx"
+    field-id: "59510507e4b073b05d32008a"
+    brand: "0d2d7cfa-9e5e-4390-a5cb-3002c1086f0b,4c527c8d-6d75-402b-a6c9-3df64f7e6e78"
+  cache:
+    time-to-live: 43200 #12 hours (According to actual implementation in Careers)
+    max-entries-local-heap: 2000
+
+management:
+  endpoints:
+    enabled-by-default: false
+    jmx:
+      exposure:
+        include: health,info
+    web:
+      exposure:
+        include: health,info
+  info:
+    env:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+
+info:
+  app:
+    version: CI_PIPELINE_IID
+    commit: CI_COMMIT_SHORT_SHA
+    branch: CI_COMMIT_BRANCH
+
+server:
+  port: 8086
+

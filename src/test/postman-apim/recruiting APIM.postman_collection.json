@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "8b46aa6d-7916-45d9-be07-73f5f41bb2bf",
+		"name": "recruiting APIM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5586045"
+	},
+	"item": [
+		{
+			"name": "API v1",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAuth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/recruiting/api/v1/categories",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"recruiting",
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAuth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/recruiting/api/v1/countries",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"recruiting",
+								"api",
+								"v1",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAuth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/recruiting/api/v1/jobs",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"recruiting",
+								"api",
+								"v1",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jobs-application",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{tokenAuth}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Testfirstname_DONT-USE\",\r\n    \"lastName\":\"Testlastname_DONT-USE\",\r\n    \"email\":\"cr.careers.by.pdg@yopmail.com\",\r\n    \"phoneNumber\":\"50683288274\",\r\n    \"country\":\"Costa Rica\",\r\n    \"jobId\":\"743999812777904-senior-creative-engineer---e-mail\",\r\n    \"srUuid\":\"905f658c-bef0-4597-b1ff-b5e69c962edb\",\r\n    \"linkedinUrl\":\"linedInd/test_DONT-USE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/recruiting/api/v1/jobs-application",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"recruiting",
+								"api",
+								"v1",
+								"jobs-application"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"item": [
+				{
+					"name": "swaggerDocs",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/v3/api-docs",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"v3",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swaggerUI",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/swagger-ui/index.html",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"swagger-ui",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "health",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUTH_API_KEY",
+								"value": "abcd123456",
+								"type": "text"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "c18c0d53aba341acaf38b1d7ed757349",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://stagelatamapim.azure-api.net/actuator/health/ping",
+							"protocol": "https",
+							"host": [
+								"stagelatamapim",
+								"azure-api",
+								"net"
+							],
+							"path": [
+								"actuator",
+								"health",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token for API consumtion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"tokenAuth\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "{{grant_type}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/2a78c44c-bd74-4e62-9c3c-422224fc28b4/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"2a78c44c-bd74-4e62-9c3c-422224fc28b4",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjJaUXBKM1VwYmpBWVhZR2FYRUpsOGxWMFRPSSJ9.eyJhdWQiOiIzYmNhMmE4YS04YWI2LTQ4YWQtYTdjNC1jMzY4NTU3OTVhYzQiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vMmE3OGM0NGMtYmQ3NC00ZTYyLTljM2MtNDIyMjI0ZmMyOGI0L3YyLjAiLCJpYXQiOjE2NTgxODA4MzksIm5iZiI6MTY1ODE4MDgzOSwiZXhwIjoxNjU4MTg0NzM5LCJhaW8iOiJFMlpnWU9qTmsxd1Q3Q0pnMHRXcXlaUEk3dVVBQUE9PSIsImF6cCI6IjFjNjljOWU5LTMyOTMtNDljMC1hNDVlLWMyMmUyMjE3Y2U4YSIsImF6cGFjciI6IjEiLCJvaWQiOiI2MzRjMDE0ZS1jOTdkLTRlNDAtOTk1Ny02ZmIxYWVjN2ZmN2UiLCJyaCI6IjAuQVJVQVRNUjRLblM5WWs2Y1BFSWlKUHdvdElvcXlqdTJpcTFJcDhURGFGVjVXc1NLQUFBLiIsInN1YiI6IjYzNGMwMTRlLWM5N2QtNGU0MC05OTU3LTZmYjFhZWM3ZmY3ZSIsInRpZCI6IjJhNzhjNDRjLWJkNzQtNGU2Mi05YzNjLTQyMjIyNGZjMjhiNCIsInV0aSI6IjlOQ01UdmFITlVpckU4alhQamtGQUEiLCJ2ZXIiOiIyLjAifQ.IVLrxzx2tWSZ8ELMgTuayDVdDLv0X3qxo_6j30Hg-q4weSUYfStXBZRs1SQjd3D5B42f-4ZHx_0lkDvzWxyPSqxh6cxlpCfxvCyEYqZmyN5-U8vfE1j9bg69l-WHQFEzOH6CZ-bwfBOcbMb5p97g5yV1VB7sQbi0xESLtp1shRFWziUn39TE0yA4DJhSQjsNE4PROZg_BfTH4ETsYrM6jypxYK7fT_nXAGtwe7raauEyqvCfWuqkx0s2K7wW5b3nWUt5Nc9sKnVRRiLKdXwsP9UiNSNIJRcQ__E0nTdGpUurVrQEepRkvBER-CXxNLDm5gkTP6m4hPVLiu3Y-KlKgA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "1c69c9e9-3293-49c0-a45e-c22e2217ce8a",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "GBv8Q~_TXK4NFvngp6FZrxLxatJDyl45YwBf1bF5",
+			"type": "string"
+		},
+		{
+			"key": "scope",
+			"value": "https://pgdStageADTenant.onmicrosoft.com/3bca2a8a-8ab6-48ad-a7c4-c36855795ac4/.default",
+			"type": "string"
+		},
+		{
+			"key": "grant_type",
+			"value": "client_credentials",
+			"type": "string"
+		}
+	]
+}
