@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pgd</groupId>
-    <artifactId>recruiting-platform-service</artifactId>
+    <artifactId>generic-filter-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>recruiting-platform-service</name>
-    <description>recruiting-platform-service</description>
+    <name>generic-filter-service</name>
+    <description>generic-filter-service</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -62,19 +62,10 @@
             <version>1.4.2.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>1.4.2.Final</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -84,11 +75,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.5.0</version>
         </dependency>
 		<dependency>
             <groupId>org.sonarsource.scanner.maven</groupId>
