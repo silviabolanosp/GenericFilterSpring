@@ -4,9 +4,8 @@ import com.pgd.genericFilter.entities.PersonEntity;
 import com.pgd.genericFilter.models.responses.Person;
 import com.pgd.genericFilter.repositories.PersonEntityRepository;
 import com.pgd.genericFilter.services.PersonService;
-import com.pgd.genericFilter.services.mapper.PersonMapper;
+import com.pgd.genericFilter.services.mapper.GenericModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +24,12 @@ public class PersonServiceImp implements PersonService {
      * Dependency injection of PersonMapper to map data
      * names from SR to Careers format.
      */
-    @Autowired
-    private PersonMapper personMapper;
+
+    private final GenericModelMapper mapper;
+
+    public PersonServiceImp() {
+        this.mapper = GenericModelMapper.singleInstance();
+    }
 
     /**
      * Send data store in data base.
@@ -38,8 +41,8 @@ public class PersonServiceImp implements PersonService {
                 PersonEntityRepository
                         .findAll();
         List<Person> jobs =
-                personMapper
-                        .jobsEntityToPersons(jobEntities);
+                mapper
+                        .personsEntityToPersons(jobEntities);
         return Optional
                 .of(jobs);
     }
@@ -53,8 +56,8 @@ public class PersonServiceImp implements PersonService {
                 PersonEntityRepository
                         .findAll(spc);
         List<Person> jobs =
-                personMapper
-                        .jobsEntityToPersons(jobEntities);
+                mapper
+                        .personsEntityToPersons(jobEntities);
         return Optional
                 .of(jobs);
     }

@@ -7,6 +7,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.util.Locale;
 
 public class PersonSpecification implements Specification<PersonEntity> {
 
@@ -33,13 +34,13 @@ public class PersonSpecification implements Specification<PersonEntity> {
             case LESS_THAN:
                 return builder.lessThan(root.get(criteria.getKey()), criteria.getValue().toString());
             case LIKE:
-                return builder.like(root.get(criteria.getKey()), criteria.getValue().toString());
+                return builder.like(builder.upper(root.get(criteria.getKey())), criteria.getValue().toString().toUpperCase());
             case STARTS_WITH:
-                return builder.like(root.get(criteria.getKey()), criteria.getValue() + "%");
+                return builder.like(builder.upper(root.get(criteria.getKey())), criteria.getValue().toString().toUpperCase() + "%");
             case ENDS_WITH:
-                return builder.like(root.get(criteria.getKey()), "%" + criteria.getValue());
+                return builder.like(builder.upper(root.get(criteria.getKey())), "%" + criteria.getValue().toString().toUpperCase());
             case CONTAINS:
-                return builder.like(root.get(criteria.getKey()), "%" + criteria.getValue() + "%");
+                return builder.like(builder.upper(root.get(criteria.getKey())), "%" + criteria.getValue().toString().toUpperCase() + "%");
             default:
                 return null;
         }

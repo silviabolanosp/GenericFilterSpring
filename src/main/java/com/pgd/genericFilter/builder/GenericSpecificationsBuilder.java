@@ -1,4 +1,4 @@
-package com.pgd.genericFilter.filter;
+package com.pgd.genericFilter.builder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.pgd.genericFilter.filter.SearchOperation;
+import com.pgd.genericFilter.filter.SpecSearchCriteria;
 import org.springframework.data.jpa.domain.Specification;
 
 public class GenericSpecificationsBuilder<U> {

@@ -2,7 +2,7 @@ package com.pgd.genericFilter.controllers;
 
 import com.pgd.genericFilter.entities.PersonEntity;
 import com.pgd.genericFilter.filter.CriteriaParser;
-import com.pgd.genericFilter.filter.GenericSpecificationsBuilder;
+import com.pgd.genericFilter.builder.GenericSpecificationsBuilder;
 import com.pgd.genericFilter.filter.PersonSpecification;
 import com.pgd.genericFilter.models.responses.Person;
 import com.pgd.genericFilter.services.PersonService;
